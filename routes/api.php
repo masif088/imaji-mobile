@@ -40,7 +40,7 @@ Route::post('/mapping/store', function (Request $request) {
     ];
 });
 
-Route::post('/mapping/edit', function (Request $request) {
+Route::post('/mapping/update', function (Request $request) {
     Mapping::find($request->id)->update([
         'name' => $request->name,
         'address' => $request->address,
@@ -55,7 +55,7 @@ Route::post('/mapping/edit', function (Request $request) {
     ];
 });
 
-Route::post('/mapping/edit/location', function (Request $request) {
+Route::post('/mapping/update/location', function (Request $request) {
     Mapping::find($request->id)->update([
         'latitude' => $request->latitude,
         'longitude' => $request->longitude,
@@ -65,4 +65,5 @@ Route::post('/mapping/edit/location', function (Request $request) {
         'code' => 201,
         'error' => ''
     ];
+    
 });
