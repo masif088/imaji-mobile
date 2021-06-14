@@ -65,5 +65,15 @@ Route::post('/mapping/update/location', function (Request $request) {
         'code' => 201,
         'error' => ''
     ];
-    
+});
+
+Route::post('/mapping/update/status', function (Request $request) {
+    Mapping::find($request->id)->update([
+        'status' => $request->status,
+    ]);
+    return [
+        'message' => 'berhasil mengubah status',
+        'code' => 201,
+        'error' => ''
+    ];
 });
